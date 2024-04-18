@@ -27,7 +27,7 @@ type App() =
 
         match this.ApplicationLifetime with
         | :? Avalonia.Controls.ApplicationLifetimes.IClassicDesktopStyleApplicationLifetime as desktop ->
-            desktop.MainWindow <- view1 ()
+            //desktop.MainWindow <- view1 ()
             printfn "Avalonia app running...IClassicDesktopStyleApplicationLifetime"
         | _ -> printfn "OnFrameworkInitializationCompleted: ApplicationLifetime ()"
 
@@ -44,7 +44,9 @@ let app =
 let cts = new System.Threading.CancellationTokenSource()
 
 // code block works
-view1().Show()
+//view1().Show()
+
+app.Run(view1())
 //app.Run(cts.Token)
 
-app.RunWithMainWindow()
+//app.Start([||])
